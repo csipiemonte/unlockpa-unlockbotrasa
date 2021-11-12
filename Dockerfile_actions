@@ -1,0 +1,11 @@
+FROM rasa/rasa:2.0.2-full
+
+USER root
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+COPY ./code_actions /app/
+
+# the entry point
+ENTRYPOINT ["rasa"]
+CMD ["--help"]

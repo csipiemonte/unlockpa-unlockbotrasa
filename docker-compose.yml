@@ -1,0 +1,48 @@
+version: '3.0'
+services:
+  rasa:
+    image: rasa/rasa:2.0.2-full 
+    container_name: unlockbotrasa
+    build:
+      context: .
+      dockerfile: ./Dockerfile_rasa
+    ports:
+      - 5005:5005
+    env_file:
+      - .env
+    environment:
+      - PUID=1000
+      - PGID=50
+    command:
+      - run 
+      - --cors 
+      -  "*"
+#      - -vv
+      - --endpoints
+      - endpoints.yml
+    networks:
+     - unlockpa_net
+ 
+  action_server:
+    container_name: unlockbotrasa_actions
+    image: unlockbotrasa
+    build:
+      context: .
+      dockerfile: ./Dockerfile_actions 
+    networks: 
+       - unlockpa_net
+    ports:
+      - 5055:5055
+    volumes:
+      - ./code_actions:/app
+    env_file:
+      - .env
+    command:
+      - run
+      - actions
+#      - -vv
+
+networks:
+  unlockpa_net:
+    external: true
+

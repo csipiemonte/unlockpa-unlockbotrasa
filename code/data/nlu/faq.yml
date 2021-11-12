@@ -1,0 +1,989 @@
+version: "2.0"
+
+nlu:
+# - intent: faq/orari_anagrafe
+#   examples: |
+#     - che orari fa l'ufficio anagrafe ?
+#     - quando è aperto l'ufficio dell'anagrafe ?
+#     - a che ora apre l'anagrafe ?
+#     - a che ora chiude l'anagrafe ?
+
+# - intent: faq/orari_bar
+#   examples: | 
+#     - a che ora chiudono i bar ?
+#     - fino a che ora sono operti i bar ?
+#     - i bar chiudono alle 18 ?
+#     - fino a che ora posso andare al bar ?
+
+- intent: nlu_fallback
+  examples: |
+    - Sport
+    - ambiente
+    - Culura
+    - servizi
+    - salute
+    - mobilità
+    - scuola
+    - Uffici comunali
+    - tributi
+    - Covid
+    - Ciao Ci sono differenze all’interno del territorio nazionale 
+    - Buongiorno Sono definite delle aree diverse 
+    - Buon giorno In quale area siamo 
+    - Buonasera Quale è l'area del comune 
+    - Ehilà Nella mia area sono aperti ristoranti, pizzerie, pasticcerie e altre attività di ristorazione  È consentito il consumo di cibi e bevande al loro interno  Fino a che ora posso restare 
+    - Hey orario apertura bar
+    - Salve Con che orari sono aperti i bar 
+    - Hei È consentito entrare o restare all’interno di bar, ristoranti e degli altri locali adibiti alla ristorazione (pub, gelaterie, pasticcerie…), se è sospeso il consumo di cibi al loro interno 
+    - Posso entrare in una pizzeria 
+    - Posso stare dentro un ristorante  
+    - Fino a che ora posso restare al ristorante 
+    - posso bere un caffè al bar
+    - posso andare al ristorante in un altro comune
+    - posso cenare al ristorante
+    - è consentito il consumo nei bar
+    - La consegna e il trasporto dei mobili può avvenire 
+    - Posso farmi portare e montare i mobili 
+    - Il trasporto, la consegna e il montaggio di mobili rientrano nella comprovata esigenza lavorativa che giustifica gli spostamenti 
+    - Devo farmi montare la cucina, posso  
+    - È consentito svolgere assemblee condominiali in presenza 
+    - Posso andare alla assemblea di condominio 
+    - Sono consentite le riunioni di condominio 
+    - Posso recarmi alle assemblee di condominio 
+    - Nella nozione delle fiere, vietate dal Dpcm, rientrano anche manifestazioni locali con prevalente carattere commerciale 
+    - Ci saranno i mercatini di Natale  
+    - Le fiere sono vietate 
+    - Le manifestazioni locali sono consentite 
+    - Quali eventi/manifestazione ci sono oggi nel mio comune 
+    - Quali sono gli eventi/manifestazioni in programma (luoghi e date e orari) 
+    - Quali sono le iniziative turistiche e culturali 
+    - Quale è il programma di eventi culturali dalla data x alla data y 
+    - Quali sono le mostre aperte in corso e quali orari 
+    - quali sono gli eventi organizzati per il prossimo weekend (es. mostra, fiere, sagre etc...) 
+    - Ci sono attività culturali in atto oggi in città  Se sì quali 
+    - Quali attività culturali sono consentite 
+    - Quali sono le regole valide nella mia area per gli spostamenti  Ci sono dei divieti 
+    - Posso muovermi tutto il giorno 
+    - Sono limitato nei miei spostamenti 
+    - Quali sono i vincoli di spostamento/attività ecc. nella mia Città in questo periodo emergenziale (zona rossa, arancione...) 
+    - In quale fascia (rossa, gialla, arancione) è il proprio Comune di residenza e quali sono le restrizioni previste
+    - Quali sono le limitazioni alla mobilità in vigore 
+    - Quali sono le restrizioni attualmente in atto nel mio comune  Posso uscire di casa 
+    - Quali sono le regole del lockdown per il mio comune 
+    - Quali sono le misure emergenziali di restrizione alla circolazione attive oggi 
+    - Dove posso spostarmi e cosa posso fare nel mio Comune 
+    - Quali regole ci sono per gli spostamenti all'interno del comune e verso altri comuni
+    - Da che ora vige il coprifuoco 
+    - Posso circolare liberamente nel mio comune 
+    - Quali sono i MOTIVI che autorizzano a muoversi dalla propria abitazione o dal proprio comune durante il LOCK DOWN 
+    - Il mio comune è sottoposto a LOCK DOWN 
+    - In base alla classificazione attuale della mia regione, cosa NON posso fare 
+    - Cosa prevedono le norme per gli spostamenti delle persone  Ci sono dei divieti  Si può uscire per andare al lavoro 
+    - Quali sono le ordinanze o gli altri provvedimenti  emanati dal Comune (o dagli altri enti preposti) specificatamente per l'emergenza. Dove reperirli on line
+    - Quali sono le ultime misure in vigore rispetto all’emergenza Covid-19 
+    - Quali sono le disposizioni e ordinanze comunali in tema di spostamenti 
+    - Posso recarmi da un professionista per ricevere una consulenza 
+    - Cosa prevede il decreto per gli spostamenti per turismo 
+    - Quali spostamenti sono consentiti  In quali orari  (relativamente a eventuali periodi di lockdown)
+    - Quali sono gli orari in cui è possibile uscire 
+    - Ci sono orari particolari in cui non mi è permesso uscire di casa o svolgere precise attività 
+    - Posso spostarmi con il camper
+    - posso spostarmi tra comuni?
+    - posso spostarmi in Regione per turismo
+    - posso uscire in bicicletta fuori dal territorio comunale?
+    - può venire un professionista come l'elettricista per aggiustare l'impianto elettrico ?
+    - posso andare dall'estetista in un altro comune?
+    - da quando posso uscire dal mio comune
+    - posso andare dal parrucchiere?
+    - quando posso uscire dalla regione
+    - Dove posso muovermi liberamente oggi in auto?
+    - POSSO PARTECIPARE A FUNERALE ?
+    - posso uscire dal mio comune?
+    - Per quali motivi posso spostarmi in altro Comune 
+    - per chi vive in un comune di un paese molto piccolo è possibile recarsi nella città più vicina per commissioni
+    - Entro quale limite posso spostarmi per recarmi in negozi non presenti nel comune o nei comuni limitrofi a quello di residenza/domicilio 
+    - Posso uscire dal mio comune per acquistare dei beni dal mio negozio di fiducia 
+    - Posso spostarmi nel comune vicino per un acquisto 
+    - posso portare il mio cane in un area verde fuori dal mio comune (il mio comune non ha un area verde dedicata) 
+    - Quali sono i motivi per cui posso spostarmi in città e fuori essendo giustificato 
+    - Posso assistere ad un funerale di un congiunto fuori regione 
+    - Per quali motivi posso uscire dal Comune senza incorrere in sanzioni 
+    - posso andare dal parrucchiere che è nel comune limitrofo 
+    - Posso andare a fare l'ISEE presso il CAF di un comune non limitrofo 
+    - In quale ambulatorio sanitario posso andare se quello del mio comune è chiuso 
+    - E' possibile uscire dal comune per acquistare prodotti che all'interno del comune non vendono 
+    - Posso spostarmi di comune se abito al confine tra due comuni 
+    - Il mio fidanzato\a può venire nel mio comune  
+    - Quali sono le motivazioni per cui mi è concesso uscire dal territorio comunale 
+    - Posso andare in montagna fuori dal mio comune perché una patologia respiratoria 
+    - i miei genitori, che non abitano nel mio comune, posso venire a guardare la mia bimba, mentre io lavoro in smartWorking posso spostarmi da una regione all'altra 
+    - Si può prendere un aereo che non parte dalla mia regione per motivi famigliari urgenti  
+    - Posso accompagnare un convivente a prendere un aereo che non parte dalla mia regione 
+    - Il mio ginecologo ha lo studio fuori città, posso fissare la visita di controllo 
+    - Maggiore chiarezza sulla possibilità e sulle regole di spostamento da un Comune all'altro.
+    - Per quali ragioni posso spostarmi fuori dal mio Comune 
+    - Posso andare in un altro comune 
+    - Se dispongo di orto/terreno agricolo coltivato NON situato nel comune di residenza/domicilio posso recarmi nello stesso senza incorrere in sanzioni 
+    - Se il comune di domicilio è diverso da quello di residenza posso recarmi nello stesso per il ritiro di eventuale corrispondenza 
+    - Il Comune non dispone di servizio Bancomat o Postamat, dovendo spostarmi in altro comune che dispone di sportelli automatici qual è il  limite kilometrico  di distanza consentito per non ricadere in sanzione 
+    - Gli spostamenti devono essere giustificati in qualche modo? È necessario produrre un’autodichiarazione?
+    - Devo avere sempre la autodichiarazione 
+    - Come posso giustificare gli spostamenti 
+    - Se non ho l'autocertificazione è un problema 
+    - Tipo di autocertificazione che devo produrre eventualmente se mi sposto in Città o fuori Città
+    - In zona rossa per accompagnare i miei figli a scuola devo avere con me l'autocertificazione 
+    - L'autocertificazione per spostarsi la si deve avere anche se ci si muove a piedi 
+    - Abito in una frazione del Comune di residenza. Per spostarmi entro le frazioni del medesimo Comune occorre l'autocertificazione 
+    - per lo spostamento tra comuni, posso avere l'autocertificazione sul cellulare senza necessità di stamparla 
+    - Posso spostarmi in un altro comune senza l'autocertificazione 
+    - Quando devo avere con me l'autocertificazione 
+    - Per recarmi presso un terreno di mia proprietà mi basta l'autocertificazione 
+    - devo avere l'autocertificazione compilata quando esco in periodo emergenza covid?
+    - Posso andare ad assistere un parente o un amico non autosufficienti?
+    - Ho i genitori non autosufficienti, posso andare da loro 
+    - Ci sono vincoli negli spostamenti per andare da persone non autosufficienti 
+    - Posso raggiungere un amico non autosufficiente 
+    - Posso spostarmi in un altro Comune per assistere un mio congiunto anziano malato 
+    - Per assistenza anziani nel medesimo comune è possibile spostarsi 
+    - Posso andare a trovare i genitori anziani 
+    - posso andare a trovare mia mamma/parenti anziani 
+    - Posso accompagnare mia madre anziana a fare delle visite fuori Comune 
+    - posso andare a trovare mia suocera che è anziana e risiede in un comune vicino al mio?
+    - POSSO SPOSTARMI DI COMUNE PER ASSISTENZA ANZIANI
+    - Sono separato/divorziato, posso andare a trovare i miei figli minorenni?
+    - Posso andare a prendere i bambini da mia moglie separata 
+    - Posso portare mia figlia da mio marito divorziato 
+    - Posso portare e prendere i figli da mio marito separato 
+    - Posso andare a trovare parenti o congiunti 
+    - Posso portare mia figlia dai nonni 
+    - Posso portare e prendere i figli da mio padre, nonno del bambino 
+    - Posso spostarmi per portare i bambini dai nonni 
+    - È possibile spostarsi per accompagnare i propri figli dai nonni o per andarli a riprendere all'inizio o al termine della giornata di lavoro 
+    - E' possibile vedere i congiunti/parenti che risiedono in un comune diverso 
+    - Posso andare a trovare i miei nonni che abitano nelle campagne al confine fra il mio paese di residenza ed un altro 
+    - Posso andare a trovare un familiare 
+    - Posso andare in visita da un parente 
+    - Posso andare a fare visita o a mangiare dai parenti 
+    - Sono consentiti gli spostamenti per fare visita alle persone detenute in carcere 
+    - Posso andare a trovare una persona detenuta 
+    - Posso andare in carcere 
+    - Posso andare a colloquio con una persona in carcere 
+    - visite carcere
+    - Chi è sottoposto alle misure della quarantena o dell’isolamento si può spostare 
+    - Sono isolamento fiduciario, posso uscire per necessità 
+    - Mi posso spostare per fare la spesa se sono in isolamento 
+    - Posso andare a fare delle visite mediche se sono in quarantena 
+    - Se dopo 21 giorni di quarantena continuo ad essere positivo al COVID posso uscire comunque di casa o devo continuare a restare isolato finché l'esito del tampone non sia negativo 
+    - Chi è sottoposto alla misura della quarantena, si può spostare 
+    - Se un familiare è positivo posso uscire per fare la spesa o andare al lavoro 
+    - Il mio fidanzato è positivo e quindi in isolamento posso muovermi in città a qualsiasi ora per portargli da mangiare o altri beni di cui avesse necessità 
+    - isolamento fiduciario
+    - in cosa consiste l'isolamento fiduciario?
+    - Sono in isolamento, posso uscire?
+    - Sono in quarantena, posso uscire?
+    - Cosa devo fare in caso di sintomi (tosse, raffreddore, febbre) 
+    - Ci sono limitazioni negli spostamenti per chi ha sintomi da infezione respiratoria e febbre superiore a 37,5 
+    - Ho la febbre, posso spostarmi 
+    - Ho mal di gola, posso uscire di casa 
+    - Con la tosse e il mal di gola, posso spostarmi 
+    - Come mi devo comportare nel caso abbia SINTOMI riconducibili al COVID 
+    - A chi rivolgersi nel caso si abbia il sospetto di avere sintomi riconducibili al Covid-19
+    - Quali email, numeri di telefono contattare nel caso abbia sintomi riconducibili al COVID
+    - ho solo un po' di raffreddore, posso uscire?
+    - posso uscire se ho un po' di febbre?
+    - se ho la febbre devo andare al pronto soccorso?
+    - ho la febbre, cosa fare
+    - se ho la tosse posso andare a fare la spesa?
+    - È possibile fare la spesa in un comune diverso da quello in cui si abita?
+    - Posso cambiare comune per fare la spesa 
+    - Per la spesa, posso andare in un altro comune 
+    - La spesa la posso fare nel comune vicino 
+    - Posso fare la spesa in un altro comune 
+    - posso andare a fare la spesa in un altro comune 
+    - se devo andare a fare la spesa in un altro comune e sono in zona rossa o gialla posso andare 
+    - Posso spostarmi in altri comuni per fare commissioni 
+    - L'ipermercato dove faccio sempre la spesa si trova nel Comune accanto al mio. Posso andare lì a fare la spesa o posso usufruire solo del supermercato del Comune di residenza 
+    - È possibile fare la spesa in un comune diverso da quello in cui si abita 
+    - Dove posso andare a fare la spesa  Nel mio comune o nel posto/supermercato più vicino anche se fuori comune 
+    - Posso spostarmi di un comune in Provincia di Torino a Torino per delle commissioni 
+    - Posso portare mia figlia con me a fare la spesa 
+    - È possibile uscire per andare ad acquistare generi alimentari  I generi alimentari saranno sempre disponibili 
+    - posso prendere l'auto per andare a fare la spesa in un quartiere differente dal mio 
+    - Posso fare la spesa in un altro comune 
+    - Posso andare al supermercato del paese vicino  (per comuni piccoli con pochi negozi di prossimità)
+    - Posso spostarmi per fare la spesa in un Comune vicino 
+    - posso comprare in un supermercato più economico fuori dal mio comune 
+    - dove posso fare la spesa?
+    - Posso uscire a fare la spesa?
+    - Posso andare a fare la spesa?
+    - Cosa significa “comprovate esigenze lavorative”  I lavoratori autonomi come faranno a dimostrare le “comprovate esigenze lavorative” 
+    - cosa vuol dire comprovate esigenze 
+    - significato di comprovate
+    - cosa si intende per comprovate esigenze lavorative 
+    - Devo recarmi al lavoro per una questione urgente, lo posso fare  Cosa devo avere con me 
+    - Chi si trova fuori dal proprio domicilio, abitazione o residenza potrà rientrarvi 
+    - Posso fare rientro a casa 
+    - E' permesso ritornare al proprio domicilio 
+    - Posso rientrare alla residenza 
+    - Ho la residenza in un altro Comune della Regione diverso dal Comune dove vivo. Posso raggiungere il mio Comune di residenza dove possiedo la mia prima casa e ritornare nel Comune dove, invece, vivo con la mia famiglia 
+    - È possibile raggiungere la seconda casa 
+    - Posso andare nella seconda casa 
+    - Posso andare nella mia casa al mare 
+    - E' permesso spostarsi verso la residenza di montagna 
+    - Posso andare nella seconda casa a fare manutenzione e controllo 
+    - SI PUÒ ANDARE NELLE SECONDE CASE 
+    - è possibile raggiungere la seconda casa?
+    - Ci si può spostare per andare in chiesa o negli altri luoghi di culto 
+    - E' permesso andare in chiesa 
+    - Posso andare a pregare 
+    - E' possibile andare a Messa 
+    - Posso recarmi nei LUOGHI di CULTO nel mio comune 
+    - si può andare a messa 
+    - posso andare a messa
+    - è possibile fare la passeggiata con il cane 
+    - Posso uscire con il mio animale da compagnia 
+    - Posso portare a passeggio il cane 
+    - Posso uscire con il cane 
+    - Posso andare in giro con il mio animale 
+    - dopo le 22 posso portare a passeggio il cane ?
+    - è possibile uscire per una passeggiata?
+    - posso portare a spasso il cane?
+    - È consentito fare attività motoria 
+    - Posso andare a camminare 
+    - In base alle attuali restrizioni, ci sono obblighi o limiti da soddisfare per praticare l'attività motoria vicino a casa 
+    - Posso uscire a passeggio 
+    - E' permesso andare a camminare 
+    - Si può uscire per fare una passeggiata 
+    - Posso uscire per una semplice passeggiata  che vincoli ci sono 
+    - Posso camminare per il mio Comune insieme ad amici 
+    - Posso uscire per fare jogging  Ci sono dei limiti sulla distanza dall'abitazione 
+    - posso andare a fare una passeggiata in un parco che si trova in un quartiere diverso da quello in cui abito 
+    - Posso spostarmi con l'auto per svolgere attività fisica nei parchi 
+    - Posso prendere l'auto per svolgere attività fisica nei boschi 
+    - posso portare la mia bimba a fare una passeggiata per vedere i cavalli in una zona periferica del paese 
+    - L’accesso a parchi e giardini pubblici è consentito  Quali sono i parchi aperti 
+    - Posso andare al parco giochi con i bambini 
+    - Posso andare ai giardini pubblici 
+    - giardini e parchi aperture
+    - E' permesso portare i bambini ai giochi all'aperto 
+    - è possibile andare al parco con i bambini 
+    - Posso portare i bambini al parco 
+    - L'accesso a parchi e giardini pubblici è consentito 
+    - L’accesso a parchi, giardini pubblici, aree verdi presenti nel territorio comunale è consentito  Ci sono deroghe e/o particolari restrizioni 
+    - Quali sono i parchi e le piste ciclabili presenti nel comune 
+    - Informazioni utili sul verde cittadino, accesso ai parchi, ciclabili, aree bimbi ecc
+    - POSSO ANDARE AL PARCO
+    - Posso utilizzare la bicicletta 
+    - Posso muovermi in bici 
+    - Posso fare sport con la bicicletta 
+    - E' permesso lo spostamento in bicicletta 
+    - In bici in città devo usare la mascherina 
+    - Posso andare in bicicletta senza mascherina 
+    - Posso fare un giro in bicicletta nelle campagne del paese 
+    - Posso utilizzare la bicicletta 
+    - Posso usare l’automobile con persone non conviventi 
+    - Posso andare in auto con amici 
+    - Quante persone possono salire in automobile 
+    - E' permesso usare l'automobile con persone con cui non convivo
+    - Posso usare l'automobile con persone non conviventi 
+    - posso usare l'auto con persone non conviventi?
+    - Quali negozi ed esercizi commerciali trovo aperti nei giorni feriali e quali nei giorni festivi 
+    - Informazioni negozi aperti/chiusi
+    - Posso uscire per recarmi in un negozio di oggetti non essenziali  Posso uscire dal proprio comune per farlo 
+    - Quali negozi sono aperti 
+    - QUALI NEGOZI SONO APERTI 
+    - posso andare in un negozio che è presente solo in un altro comune 
+    - Quali negozi e/o attività sono aperti 
+    - fino a che ora sono aperti i negozi 
+    - Le officine dei meccanici sono aperte 
+    - FINO A CHE ORA E' CONSENTITA LA CONSEGNA A DOMICILIO DEI CIBI / MERCI 
+    - sono aperti i centri commerciali?
+    - QUALI Attività COMMERCIALI SONO APERTE
+    - Quali negozi non sono aperti?
+    - Orario dei negozi
+    - sono aperti i centri commerciali nei giorni festivi?
+    - fino a che ora sono aperti i negozi?
+    - i mercati rionali sono aperti 
+    - quali banchi sono presenti nel mercato rionale 
+    - NEI MERCATI CI SONO ANCHE I BANCHI NON ALIMENTARI 
+    - mercati rionali aperture
+    - i mercati rionali sono aperti?
+    - quando c'è il mercato?
+    - Si può fare attività sportiva all'aperto 
+    - Se esco al parco cittadino a fare jogging devo avere sempre la mascherina 
+    - Si può correre all'aperto  
+    - Posso correre senza mascherina 
+    - posso andare a correre assieme alla mia compagna o è concesso farlo solo individualmente 
+    - se vado a correre, devo indossare la mascherina oppure averla obbligatoriamente dietro 
+    - Posso fare sport all'aperto senza mascherina 
+    - Quali attività SPORTIVE possono essere praticate all’APERTO 
+    - E' possibile svolgere attività sportiva all'aperto 
+    - Quali attività sportive si possono praticare nel comune e con quale modalità; esempio in un comune montano l'arrampicata si può fare 
+    - posso fare attività sportiva all'aperto in più persone  con la mascherina?
+    - posso giocare a calcetto?
+    - posso andare a correre?
+    - quali sport posso praticare
+    - posso correre nel parco?
+    - Come funziona il servizio di smaltimento di rifiuti ingombranti 
+    - Posso gettare gli ingombranti 
+    - Possibilità di prenotare online il ritiro dei rifiuti ingombranti  
+    - Devo buttare dei rifiuti ingombranti, cosa devo fare 
+    - Come funziona il ritiro dei rifiuti ingombranti 
+    - orari e regole aree ecologiche per conferimento rifiuti ingombranti
+    - Come fare a smaltire rifiuti ingombranti 
+    - Quale è il numero da contattare per usufruire del servizio gratuito di ritiro rifiuti ingombranti 
+    - smaltimento divano
+    - come faccio a prenotare il ritiro di oggetti ingombranti
+    - devo buttare un televisore
+    - Informazioni per ritiro rifiuti ingombranti
+    - orario ecocentro
+    - apertura ecocentro
+    - indirizzo ecocentro
+    - orari ecocentro
+    - orari apertura ecocentro
+    - orari indirizzo ecocentro
+    - Quali sono gli orari delle isole ecologiche 
+    - Quando chiude l'ecocentro?
+    - ACCESSO A ECOCENTRO
+    - Orario apertura ecocentro
+    - orario ecocentro piscina di Pinerolo
+    - a che ora apre l'ecocentro?
+    - ecocentro
+    - quando apre l'ecocentro?
+    - A che ora apre l'ecocentro?
+    - regole della raccolta differenziata (carta, plastica, alluminio, vetro, RAEE, pile, olio esausto)
+    - come e dove posso smaltire i RAEE 
+    - Ci sono deroghe o restrizioni alle normali disposizioni già in vigore in tema di smaltimento dei rifiuti 
+    - Dove posso buttare le pile 
+    - Dove sono i punti di raccolta per le pile scariche 
+    - Quali sono i punti di raccolta per l'olio esausto 
+    - riciclo tappi plastica punti di consegna
+    - QUALI SONO LE REGOLE DELLA RACCOLTA DIFFERENZIATA
+    - raccolta umido quale giorno
+    - posso buttare le lampadine nel generico?
+    - Quando butto la carta
+    - raccolta carta in quale giorno
+    - batterie da smaltire
+    - Ci sono contributi/sgravi ai quali si può accedere a causa della pandemia 
+    - Come accedere ai bonus per l'acquisto di dispositivi elettronici per la DAD  
+    - Dove posso reperire le informazioni rispetto ai contributi attivati dai bandi comunali
+    - Come ottenere l'EcoBonus 110% 
+    - Quali sono i requisiti e come posso accedere al servizio comunale per i buoni spesa 
+    - come faccio a fare il bonus cultura  
+    - ho un esercizio commerciale che in questo periodo è rimasto chiuso, cosa devo fare per richiedere il bonus 
+    - Quali sono i bandi, bonus, agevolazioni, per l'assistenza alle persone
+    - Quali sono i  Bonus messi a disposizione e  quali regole per poter accedervi 
+    - I Bonus previsti, i requisiti per poter aderire e indicare la procedura per farne richiesta
+    - Servizi ordinari e straordinari in ambito socio-assistenziale previsti dal Comune
+    - iniziative di supporto alle famiglie/cittadini del territorio nella fase emergenziale (es. strutture di sostegno psicologico per i cittadini)
+    - Quali servizi pubblici sono disponibili a domicilio 
+    - Informazioni in ambito socio-assistenziale.
+    - Quali strutture sono presenti all'interno del Comune che offrono servizi e aiuti per la terza età 
+    - Quali strutture offrono servizi e aiuti per persone che vivono sole e necessitano di assistenza 
+    - Dove posso trovare informazioni sul funzionamento dei servizi sociali 
+    - Dove si trovano fisicamente gli uffici dei servizi sociali 
+    - Come posso conoscere l'esistenza e l'utilizzo di un servizio di trasporto dei malati 
+    - A chi rivolgersi per il supporto a figli disabili che non possono frequentare le lezioni scolastiche in presenza  
+    - Quali servizi sono presenti nel territorio comunale rivolti a disabili 
+    - Sono una persona con disabilità dove trovo le informazioni sui servizi disponibili 
+    - Quali sono i servizi a supporto di disoccupati e come possono essere fruiti 
+    - Sono una persona anziana e devo recarmi in ospedale per fare una visita prenotata da tempo. Il Comune mi può aiutare 
+    - devo chiedere l'accompagnamento per un anziano che va in rsa cosa devo fare  
+    - dove posso rivolgermi per avere servizi di assistenza per le classi deboli  
+    - Quali sono i servizi per i cittadini attivi durante il periodo estivo 
+    - Assistenza e Traduzioni per la popolazione straniera presente sul territorio comunale 
+    - Sono presenti strutture e/o unità di protezione civile nell’ambito del territorio comunale a cui far riferimento in caso di situazioni famigliari di grave disagio 
+    - Esistono nell'ambito del territorio comunale servizi straordinari a sostegno delle persone più fragili 
+    - Quali servizi legati ai servizi educativi e alle scuole sono attivi e con quali modalità si possono fruire
+    - Strutture di accoglienza, dormitori cittadini 
+    - Distribuzione pasti per i meno abbienti
+    - ci sono servizi sul territorio per la maternità e per l'infanzia 
+    - Quali servizi offre il comune per la maternità e per l'infanzia 
+    - quali sono gli orari di ricevimento dei servizi sociali?
+    - orari ricevimento servizi sociali
+    - ci sono servizi di assistenza per persone in difficoltà?
+    - Quali sono gli orari e numeri telefono delle biblioteche comunali aperte ed il loro indirizzo 
+    - Quando riaprirà la biblioteca 
+    - Orario biblioteca  con quale modalità si può accedere al prestito libri 
+    - orario biblioteca
+    - apertura biblioteca
+    - indirizzo biblioteca
+    - orari biblioteca
+    - orari apertura biblioteca
+    - orari indirizzo biblioteca
+    - quali sono le biblioteche aperte oggi 
+    - prestito libri 
+    - biblioteche comunali
+    - vorrei andare in biblioteca, sa dirmi se sono aperte?
+    - biblioteche civiche
+    - Quando aprono le biblioteche?
+    - la biblioteca è aperta?
+    - è aperta la biblioteca del lingotto?
+    - le biblioteche sono aperte?
+    - Sono disponibili servizi per la consegna a domicilio della spesa e dei farmaci 
+    - Ci sono dei servizi per la consegna a domicilio della spesa  
+    - Sono in quarantena e abito da solo. A chi posso rivolgermi per avere la spesa a domicilio e per i farmaci 
+    - Se non posso uscire di casa, come faccio a farmi portare la spesa 
+    - Ho bisogno della spesa a casa, chi me la porta 
+    - C'è un modo per farmi portare i farmaci a casa visto che sono in quarantena 
+    - Chi chiamo per avere la spesa a casa 
+    - quali sono i negozi che effettuano consegne a domicilio?
+    - servizi per consegna farmaci
+    - ci sono servizi per la consegna della spesa a casa?
+    - sono presenti servizi per la consegna a domicilio della spesa?
+    - Come avere informazioni sulla ZTL  
+    - Posso entrare nella ztl  in quali orari 
+    - La ZTL è sospesa o attiva 
+    - In questo periodo è attiva la ZTL 
+    - piano di circolazione auto/apertura ztl
+    - La ZTL è attiva?
+    - La ZTL è sospesa o attiva ?
+    - orari ztl?
+    - La sosta a pagamento è attiva o sospesa 
+    - pagamento parcheggi blu
+    - devo pagare il parcheggio?
+    - devo pagare la sosta?
+    - In quale periodo è sospeso il pagamento dei parcheggi in centro 
+    - In questo periodo i parcheggi della zona blu sono a pagamento 
+    - è necessario pagare le strisce blu durante il lockdown 
+    - si pagano i parcheggi?
+    - risulta attiva oggi la sosta a pagamento?
+    - I parcheggi in centro sono a pagamento?
+    - Variazioni della viabilità per lavori in corso
+    - punti stradali dove sono presenti lavori che possono causare rallentamenti o interruzioni al traffico
+    - quali cantieri sono in corso lungo la strada e potrebbero causare rallentamenti al traffico 
+    - Chi devo contattare per avere informazioni sulla data di ripristino della normale viabilità a seguito di lavori di scavo (impianto idrico, telefonico, ecc.) in una specifica strada/via 
+    - Quale è il programma di lavori stradali  
+    - Notizie viabilità (conoscere il dettaglio dei lavori in corso nel territorio comunale)
+    - Qual è la situazione della viabilità nel comune (deviazioni, interruzioni, traffico, ecc.) 
+    - Ci sono blocchi del traffico per le auto  quali  per quali veicoli e quali fasce orarie e in quali giorni 
+    - Come faccio a sapere se sono in atto limitazioni del traffico, se posso o meno circolare, dove e in quali orari 
+    - Quali sono le limitazioni al traffico correnti 
+    - Limitazioni del traffico come faccio a sapere se posso circolare 
+    - Quali sono le limitazioni alla circolazione in vigore oggi 
+    - Lavori in corso sulle strade
+    - blocco viabilità
+    - Lavori sulla strada
+    - blocchi traffico?
+    - sono presenti lavori in corso?
+    - vorrei sapere i contagiati e la situazione del mio comune
+    - Quali sono i numeri di pazienti Covid positivi ricoverati negli ospedali di Torino 
+    - Quanti sono i contagiati del comune 
+    - Quanti pazienti covid ci sono 
+    - Aggiornamento settimanale malati/ricoveri contagiati
+    - Chi devo contattare per fare una vaccinazione 
+    - Modalità delle vaccinazioni antinfluenzale e poi anticovid
+    - quando saranno disponibili le primi vaccinazioni
+    - potrò vaccinarmi dal mio medico curante
+    - contatti per vaccinazione
+    - Quali EMAIL, numeri di TELEFONO contattare per sapere dover recarmi per effettuare il VACCINO COVID quando sarà disponibile 
+    - dove trovo i vaccini contro l'influenza?
+    - ho bisogno del vaccino per l'influenza
+    - Dove posso recarmi per effettuare il VACCINO ANTIINFLUENZALE 
+    - Come faccio a fare la vaccinazione COVID 
+    - vorrei fare il vaccino per il covid
+    - come posso fare il vaccino anticovid?
+    - Dove posso fare il tampone 
+    - Dove posso fare il test rapido 
+    - Quando mi arriverà il risultato del tampone e come 
+    - E' possibile farsi fare il tampone a casa 
+    - Per fare un tampone devo avere la richiesta del medico di famiglia 
+    - cosa devo fare per prenotare un tampone 
+    - Come posso prenotare un tampone rapido 
+    - Dove posso prenotare un tampone molecolare 
+    - fanno i tamponi nel mio comune  o dove si può andare 
+    - Vorrei fare il tampone privatamente. A chi mi devo rivolgere  
+    - Dove posso recarmi a fare il tampone
+    - Posso richiedere di effettuare il TAMPONE a DOMICILIO 
+    - Chi contattare per effettuare il TAMPONE 
+    - Vorrei eseguire un tampone, devo per forza avere la richiesta del medico 
+    - Dove posso effettuare il tampone Covid-19   (in prossimità al comune di residenza)
+    - Dove e come si possono fare tamponi antigenici, tamponi molecolari, test sierologici
+    - dove posso recarmi per fare il tampone?
+    - Dove posso sottopormi a tampone?
+    - dove posso eseguire il  test sierologico ?
+    - Vorrei fare il tampone, chi devo contattare?
+    - Dove sono gli hotspot per il tampone rapido?
+    - dove posso fare il tampone covid?
+    - posso fare un tampone?
+    - Dove posso fare dei tamponi a pagamento?
+    - dove posso fare il tampone?
+    - a chi posso chiedere per fare il tampone?
+    - Quali sono i contatti per la guardia medica e per interagire con l'ASL   
+    - contatti guardia medica
+    - come chiamo l'ambulanza
+    - sto male chi posso chiamare
+    - non respiro chi può aiutarmi
+    - ho male al cuore cosa faccio
+    - non sto bene chi chiamo
+    - Quali sono i numeri di telefono della ASL?
+    - Come posso prenotare un esame del sangue presso ASL di competenza 
+    - devo prenotare una visita medica. Quali sono i recapiti telefonici 
+    - Quali sono le modalità per accedere all'asl del mio Comune in questo periodo. Cosa devo avere con me 
+    - Come posso telefonare alla guardia medica?
+    - Se il mio medico non è reperibile, a chi posso rivolgermi  Quali sono i contatti della guardia medica 
+    - In caso di sintomi o positività al covid dopo aver sentito il medico, chi devo allertare e cosa devo fare 
+    - quale numero fare per entrare in contatto con il SISP
+    - Quali sono i numeri della sanità da contattare del mio comune come la guardia medica?
+    - come posso contattare la guardia medica?
+    - chi devo chiamare per la guardia medica
+    - quali sono gli orari della guardia medica?
+    - qual è il numero della guardia medica
+    - guardia medica
+    - Sedi ASL
+    - Necessito di informazioni sul servizio mensa per le scuole
+    - Come posso contattare il responsabile delle mense scolastiche 
+    - Sito della mensa 
+    - Conoscere il credito residuo del borsellino elettronico per la mensa dei propri figli
+    - mensa scolastica quanto costa
+    - Cosa devo fare per iscrivere i miei figli a scuola 
+    - cosa fare per l'iscrizione alle scuole pubbliche  
+    - Dove trovo le date degli Open Day delle scuole comunali 
+    - Come posso sapere come fare ad utilizzare un asilo nido 
+    - vorrei iscrivere i bimbi a scuola
+    - Voglio iscrivere mio figlio a scuola, cosa devo fare?
+    - quando aprono le iscrizioni alla scuola materna
+    - quando iscrivere figlio a scuola media?
+    - vorrei portare i miei figli a scuola, cosa serve?
+    - asilo
+    - iscrizione alla prima elementare
+    - iscrizione nido
+    - Qual è l'iter per l'iscrizione alla scuola
+    - voglio iscrivere mio figlio a scuola
+    - Quali sono i contatti per usufruire del servizio di scuolabus 
+    - Servizio di trasporto scolastico quali disposizioni sono in vigore attualmente nel Comune di residenza  
+    - Non posso più accompagnare mio figlio a scuola, c'è un servizio di scuolabus  
+    - scuolabus
+    - E' ATTIVO IL SERVIZIO SCUOLABUS
+    - Informazioni sul servizio scuolabus
+    - Come faccio a segnalare problemi, disservizi e guasti  Come segnalo comportamenti non corretti quali sono i contatti della Polizia Municipale  
+    - Come segnalare velocemente dallo smartphone la scarsa pulizia di alcune zone della città 
+    - Come si può segnalare l'assenza degli stalli del bike sharing nei punti strategici della città 
+    - Come segnalare una pista ciclabile ingombrata  In generale, come si può fare le segnalazioni sullo stato delle piste ciclabili  
+    - Devo segnalare che i bidoni della raccolta differenziata sono danneggiati o insufficienti, a chi posso segnalarlo 
+    - Cosa devo fare per segnalare strade con il fondo sconnesso (buche) 
+    - Vorrei segnalare malfunzionamenti o mancata manutenzione
+    - Comunicare con il comune per qualsiasi segnalazione e ottenere un tracciamento della stessa.
+    - dove trovo i riferimenti per segnalare un guasto su servizi erogati dal comune 
+    - Informazioni sulla manutenzione della rete stradale, con la possibilità di interagire per segnalazioni puntuali.
+    - Come posso segnalare l'erba alta da sfalciare o dei rami di albero che ostruiscono la visuale di un incrocio 
+    - Come posso segnalare una problematica rilevata a livello cittadino  (es. luci stradali spente)
+    - c'è un modo per segnalare disservizi, problemi di viabilità, marciapiedi sconnessi/pericolosi, etc.  
+    - A chi posso segnalare un problema di incuria, sporcizia o malfunzionamento di opere e strutture di competenza comunale 
+    - Come posso segnalare che gli alberi oscurano il semaforo e la segnaletica stradale 
+    - Come posso segnalare il malfunzionamento dei lampioni pubblici 
+    - Voglio segnalare al comune di una buca pericolosa sotto casa, a chi mi devo rivolgere, a quale numero di telefono 
+    - Chi contattare per lamentele su bici, monopattini abbandonati in luoghi non consoni 
+    - come segnalare velocemente al comune una strada sconnessa che potrebbe diventare pericolosa per pedoni o moto...
+    - Come segnalare problemi di funzionamento ai lampioni, perché possano celermente essere risolte 
+    - come posso segnalare una situazione di degrado urbano 
+    - dove segnalo gli animali randagi
+    - Come posso segnalare un danno al manto stradale o a i marciapiedi affinché venga riparato 
+    - Quali sono gli orari e telefoni delle sedi della Polizia Municipale per segnalazioni  
+    - Chi contatto per segnalare comportamenti non corretti 
+    - Al bar sotto casa mia gli avventori sono spessissimo senza mascherine, se li riprendo mi insultano. Posso chiamare i vigili in forma anonima 
+    - Cosa posso fare nel caso in cui vi siano vicini o persone che regolarmente fanno rumori molesti in orari notturni  
+    - il mio comune ha un numero verde per denunciare i trasgressori  
+    - Come si segnalano rumori molesti notturni dei vicini 
+    - Come segnalare situazioni di persone che stanno occupando una casa
+    - segnalazione buca in strada
+    - come faccio per segnalare la presenza di una buca sulla strada?
+    - sede polizia municipale del mio quartiere?
+    - Come faccio a segnalare un problema su una strada comunale?
+    - Informazioni sugli impianti sportivi comunali aperti e regole per lo sport
+    - Attività sportive quali regole seguire per attività individuali presso strutture e impianti sportivi
+    - Quali sono gli impianti sportivi (calcio, tennis, altri sport) aperti  e quali sono i recapiti
+    - orario impianti sportivi
+    - apertura impianti sportivi
+    - indirizzo impianti sportivi
+    - orari  impianti sportivi
+    - orari apertura impianti sportivi
+    - orari indirizzo impianti sportivi
+    - Quali centri sportivi aperti. Orari 
+    - Orari apertura piscina
+    - tennis
+    - sport
+    - le piscine sono aperte?
+    - campi sportivi
+    - sono aperte le piscine?
+    - Orari piscine
+    - posso andare in piscina?
+    - quando riapre la piscina comunale
+    - Modalità di accesso agli uffici comunali prenotazioni e orari per appuntamenti in sede; servizi online
+    - Voglio avere un certificato relativo alla situazione anagrafica della mia famiglia
+    - Come faccio ad ottenere un certificato anagrafico senza recarmi in Anagrafe 
+    - Dove posso ottenere un particolare certificato  
+    - Come faccio a pagare un certificato anagrafico senza recarmi in Anagrafe 
+    - se devo andare all'anagrafe per fare un documento, cosa devo fare 
+    - Come posso ottenere una dichiarazione sostitutiva di atto notorio 
+    - Richiesta certificati anagrafici
+    - orario uffici
+    - apertura  uffici
+    - indirizzo  uffici
+    - orari uffici
+    - orari apertura  uffici
+    - orari indirizzo uffici
+    - apertura uffici anagrafici e modalità rinnovo/rilascio documenti
+    - Quali sono gli orari degli uffici dell'anagrafe correnti 
+    - Uffici comunali giorni ed orari di apertura
+    - Gli uffici pubblici rimangono aperti 
+    - in generale, apertura e modalità di appuntamento uffici comunali
+    - Come faccio a sapere se la mia anagrafe di zona è aperta  
+    - Esiste un numero unico per avere informazioni su orari di apertura uffici pubblici 
+    - Quali uffici pubblici sono aperti nel mio comune
+    - Quali sono gli orari di apertura di tutti gli uffici comunali e dell'URP 
+    - Orari anagrafe
+    - Qual è l'orario di apertura dell'ufficio anagrafe 
+    - Le attività degli uffici comunali da rendere in presenza possono essere attivate dal cittadino su appuntamento telefonico 
+    - Posso recarmi in un ufficio pubblico per espletare una pratica  Devo prenotare 
+    - Quali sono i servizi digitali offerti 
+    - Come posso accedere ai servizi comunali (anagrafe, tasse, ufficio tecnico, ecc.) nel periodo di emergenza COVID  
+    - Per accedere alla anagrafe bisogna prenotarsi  
+    - apertura uffici e servizi fruibili fisicamente e/o online
+    - Posso recarmi per delle pratiche negli uffici comunali 
+    - Che orari di apertura al pubblico opera un certo ufficio che mi è necessario consultare per espletare una pratica 
+    - Orario dei apertura dell'ufficio X - modalità on-line se esistente invece dell'erogazione del servizio in presenza
+    - E' possibile espletare la pratica X presso l'ufficio Y online  E se sì come e dove farlo (riferimenti sito web e guida minima su credenziali di accesso) 
+    - Quali sono gli orari di apertura dell'ufficio Anagrafe (ma potrebbe essere un qualsiasi altro ufficio) 
+    - L'ufficio X è aperto  In quali orari  Come posso accedere 
+    - E' necessario prenotare per venire in ufficio comunale 
+    - Per i servizi di sportello messi a disposizione dal Comune devo prenotare un appuntamento 
+    - per andare all'anagrafe devo prenotare 
+    - Orario di apertura ufficio anagrafe e loro sedi
+    - Quali uffici sono aperti al pubblico 
+    - Quali sono i servizi  del comune che posso usufruire in modalità on line  
+    - Quali servizi erogati direttamente dal Comune sono fruibili in modalità tradizionale presso sportelli
+    - volevo sapere se sono aperti al pubblico, previa appuntamento, gli uffici dell'Area Tributi e Catasto - servizio IMU-TARI
+    - Dove posso accedere ai servizi online del comune 
+    - L'ufficio è aperto nei prefestivi 
+    - Quali servizi erogati direttamente dal Comune sono fruibili in modalità on line
+    - Quale è l'orario di chiusura dell'ufficio 
+    - E' possibile prenotare online il proprio turno per evitare file e code inutili 
+    - Quando è aperto l'ufficio tecnico 
+    - Dove trovo gli orari aggiornati degli uffici comunali 
+    - quali uffici comunali sono aperti e con che orario    devo prenotare  
+    - Gli uffici comunali sono aperti su appuntamento 
+    - Quali sono gli orari dei vari uffici comunali e indirizzi di posta elettronica 
+    - Quali uffici pubblici possono contattare via internet o telefono nel caso non sia nelle condizioni di raggiungerli di persona 
+    - Se devo interagire con i servizi del comune, quali passi devo fare  Devo prendere appuntamento 
+    - Quali sono le modalità per accedere agli uffici comunali 
+    - Come faccio a contattare gli uffici comunali 
+    - orari degli uffici e contatti telefonici
+    - Numeri telefono utili uffici comunali, es ufficio scuola, anagrafe, ecc...
+    - Come posso contattare l'assessore di riferimento 
+    - Come poter parlare on-line con un funzionario su un argomento, evitando di presentarsi in ufficio.
+    - Quali sono i riferimenti telefonici e gli indirizzi di posta elettronica di ogni singolo ufficio Comunale 
+    - Dove posso trovare l'Organigramma degli Uffici Comunali, con reperimento del telefono diretto dei responsabili 
+    - Come faccio a richiedere un appuntamento con i Servizi Sociali del Comune  
+    - Posso inviare la documentazione via pec ed evitare di andare allo sportello 
+    - Accesso all'archivio comunale
+    - per la mia tesi di laurea dovrei accedere agli archivi comunali come posso fare  
+    - Come posso fare una denuncia di morte 
+    - Quali uffici mi danno i permessi necessari per ristrutturare casa 
+    - quali informazioni devo fornire agli uffici tributi del Comune  
+    - Qual è l'orario di apertura dei cimiteri 
+    - orario cimitero
+    - apertura  cimitero
+    - indirizzo  cimitero
+    - orari cimitero
+    - orari apertura  cimitero
+    - qual è l'orario di accesso ai cimiteri?
+    - a che ora apre il cimitero nei weekend
+    - quando chiude il cimitero?
+    - Informazioni sulle modalità di partecipazione associazioni di volontariato
+    - Ho del tempo da mettere a disposizione c'è un servizio tipo "banca del tempo" nel mio comune, a cui posso rivolgermi per prendere in carico servizi di assistenza 
+    - Posso fare volontariato per Covid 19  
+    - vorrei mettere a disposizione qualche ora del mio tempo per attività di volontariato nel mio comune, a chi posso rivolgermi 
+    - Esiste il modo di offrire del proprio "tempo libero/competenze"  per qualche banca del tempo e ricevere quindi dei servizi in cambio 
+    - dove posso fare attività di volontariato  
+    - offrire disponibilità di tempo e risorse per dare un contributo personale
+    - Raccolta di beni di prima necessità per i poveri
+    - Quali sono le raccolte organizzate da associazioni di beneficienza 
+    - A chi posso consegnare vestiti usati
+    - Abbiamo una raccolta di cibo per le famiglie con problemi nel nostro comune (causa no reddito per covid ) 
+    - Raccolta straordinaria di contributi economici, beni alimentari e beni di prima necessità per famiglie e bambini 
+    - CI SONO ASSOCIAZIONI DI VOLONTARIATO NEL COMUNE ?
+    - Quali sono le associazioni presenti nel comune (indirizzo, telefono, e-mail) 
+    - elenco aggiornato delle associazioni di volontariato o strutture che offrono servizi di aiuto/assistenza di vario genere divisi per quartiere della città
+    - Come segnalare all'Amministrazione situazioni di difficoltà personali o di cui si è venuti a conoscenza (anziani soli, tutta la famiglia in quarantena, ecc.)
+    - Riferimenti dell'amministrazione o di associazioni del territorio che operano per sostenere persone in difficoltà
+    - rete ricreativa di solidarietà per persone sole organizzata per quartieri
+    - Con quali modalità si paga la TARI 
+    - Come pagare TARI
+    - Come si paga TARI
+    - dove pagare TARI
+    - dove si paga TARI
+    - Devo pagare la TARI 
+    - Come annullo la tassa sui rifiuti (es. per decesso o cambio residenza)  
+    - posso fare rate per la TARI
+    - posso rateizzare per la TARI
+    - informazioni sulla tassa rifiuti TARI?
+    - come si paga la tassa rifiuti?
+    - come pagare la TARI?
+    - tari
+    - esenzioni tari
+    - non ho ricevuto il bollettino TARI
+    - non ho ricevuto il bollettino
+    - mi manca il bollettino della tassa rifiuti
+    - ho perso il bollettino relativo alla tari
+    - non mi è arrivata il bollettino TARI
+    - devo pagare una tassa ma non mi è ancora arrivato il bollettino cosa fare  
+    - Quali sono le scadenze di pagamento delle varie tasse comunali 
+    - quali sono scadenze di pagamento della TARI 
+    - quando scadenze di pagamento della TARI 
+    - Ci sono variazioni nelle scadenze di pagamento delle tasse nel periodo del lockdown 
+    - Quali sono le date per le scadenze fiscali 
+    - C'è una proroga per il pagamento delle tasse 
+    - proroga scadenze fiscali
+    - tasse comunali scadenze
+    - Scadenze pagamenti previste per il mese in corso
+    - QUANDO SCADE LA SECONDA RATA DELLA TARI 
+    - Quali tasse e contributi comunali sono prorogati e con quale scadenza 
+    - scadenze tributarie
+    - quando scade la rata della TARI?
+    - Scadenza TARSU
+    - quando si paga la seconda rata imu
+    - quando scade la rata imu?
+    - quando scade la TARI
+    - vorrei sapere quando scade il pagamento della tari
+    - scadenza pagamento tari
+    - Calcolo IMU
+    - Pagamento IMU a chi posso chiedere chiarimenti  
+    - Calcolo pagamento IMU
+    - pagare imu
+    - come posso pagare l'IMU
+    - ci sono variazioni al calcolo della seconda rata IMU?
+    - come fare il calcolo dell'IMU?
+    - aliquote imu
+    - Tassa Imu
+    - Come si richiede la CIE 
+    - Come si rinnova la  CIE 
+    - Dove si prende la CIE 
+    - Dove si richiede la CIE 
+    - Dove si rinnova la  CIE 
+    - Come posso ottenere in modo rapido il rinnovo della CIE 
+    - Come si fa la carta d'identità
+    - devo rinnovare la carta di identità, è possibile accedere al portale del Comune e rinnovarla da casa 
+    - Cosa devo fare per rinnovare la carta d'identità scaduta o smarrita 
+    - Quel sportello è disponibile adesso per rinnovare la carta d'identità 
+    - se devo rinnovare la Carta d'Identità come posso fare per avere un appuntamento presso gli uffici comunali 
+    - Come si deve procedere per rinnovare la carta d'identità  in tempi di covid-19 
+    - La mia carta d'identità è scaduta. Per recarmi in comune devo prendere un appuntamento 
+    - Come si rinnova la carta di identità 
+    - E' possibile richiedere il rinnovo della carta d'identità on line con consegna a casa  
+    - devo rinnovare la mia carta di identità ma non posso andare all'anagrafe come devo procedere 
+    - Mi scade la carta di identità, cosa devo fare per rinnovarla 
+    - Se non ci si può muovere da casa come fare per fare/rinnovare un documento 
+    - Devo rinnovare la mia carta d'identità in scadenza; posso recarmi all'Anagrafe del mio Comune senza appuntamento o devo prima chiamare 
+    - cosa posso fare per rinnovare / fare un duplicato dei miei documenti anagrafici 
+    - ho perso i documenti carta di identità e tessera sanitaria. Cosa devo fare 
+    - cosa è necessario fare per avere la carta di identità elettronica  
+    - Come posso richiedere il documento d'identità in seguito a una denuncia di smarrimento 
+    - La mia carta d'identità è in scadenza, c'è un modo per poterla ricevere senza recarmi all'anagrafe durante il lockdown 
+    - Cosa devo fare per ottenere la carta di identità (o altri documenti)
+    - Tempi di attesa per prenotare CIE
+    - quale durata ha la CIE 
+    - quale validità ha la CIE 
+    - quanto dura ha la CIE 
+    - Come si prende la carta d'identità elettronica 
+    - vorrei aggiornare la carta di identità
+    - posso rinnovare la carta d' identità
+    - richiedere carta identità
+    - Come posso rinnovare la carta d'identità?
+    - quanto tempo occorre per rinnovare la carta di identità?
+    - Come posso fare per rinnovare la carta di identità?
+    - posso convertire la carta d'identità cartacea in elettronica?
+    - devo rinnovare la carta di identità
+    - Costo rinnovo carta d'identità
+    - Rinnovo carta d'identità costi
+    - Se dovessi rifare la carta d'identità, quanto mi costerebbe 
+    - Quanto costa la CIE 
+    - La mia carta d'identità è in scadenza, quanto costa rifarla?
+    - se devo rinnovare la CIE, quanto mi costa?
+    - Quanto prezzo la CIE 
+    - devo rifare la carta d'identità, quanto costa?
+    - costo carta d'identità
+    - Come si richiede il cambio di residenza 
+    - come fare per il cambio di residenza 
+    - modalità il cambio di residenza 
+    - Dove si fa e quale documentazione serve per un cambio di residenza  
+    - Come faccio a variare residenza senza recarmi in Anagrafe 
+    - Devo richiedere la residenza. Quali documenti devo produrre e dove devono essere trasmessi 
+    - Quale è la mia posizione anagrafica che risulta al Comune  Residenza, stato di famiglia, stato civile
+    - Devo effettuare un cambio di residenza, dove trovo i documenti da compilare 
+    - Aggiornamenti anagrafici, tipo cambio residenza
+    - Residenza cambio di residenza
+    - Devo effettuare un cambio di residenza, quale documenti devo compilare 
+    - Come posso avere in tempi rapidi un dato documento dell'anagrafe senza recarmi negli uffici dell'anagrafe portare per fare il cambio di residenza 
+    - Quali moduli  per fare il cambio di residenza 
+    - documenti per fare il cambio di residenza 
+    - Come posso richiedere il cambio di residenza 
+    - cambio residenza
+    - Di che colore è la mia regione?
+    - Il Piemonte è in zona gialla?
+    - centri culturali per i giovani
+    - informazioni turistiche
+    - abito a Torino posso andare al cimitero di Moncalieri?
+    - A che ora devo rientrare a casa?
+    - fino a che ora posso uscire?
+    - fino a che ora posso uscire la sera?
+    - in quali comuni posso spostarmi?
+    - La mascherina è obbligatoria?
+    - posso andare a cena da amici?
+    - Posso andare a Dronero ?
+    - posso festeggiare Capodanno in piazza?
+    - posso recarmi a cena a casa di amici ?
+    - posso recarmi dall'elettrauto situato a 20 km di distanza da casa?
+    - posso recarmi dal parrucchiere in un altro comune?
+    - posso recarmi in una regione rossa
+    - posso spostarmi a Pinerolo?
+    - Posso uscire?
+    - posso uscire di casa dopo le 22?
+    - posso uscire dopo le 22:00?
+    - qual è l'orario del coprifuoco?
+    - quali limitazioni alla circolazione ci sono in zona gialla?
+    - Quali sono le disposizioni anti covid?
+    - quali sono le limitazioni alla circolazione per l'emergenza covid19?
+    - Si può uscire dopo le 22?
+    - viaggi tra comuni
+    - Posso andare a trovare i miei genitori che vivono in un altro comune?
+    - posso andare a trovare i miei parenti
+    - Ho viaggiato all'estero e fatto tampone con esito negativo. Devo comunque osservare la quarantena?
+    - se ho la febbre devo contattare il medico curante ?
+    - Sono in quarantena, posso fare la spesa?
+    - chi devo contattare se ho la febbre ?
+    - ho la febbre chi devo contattare?
+    - posso recarmi in ospedale se ho    sintomi?
+    - posso traslocare?
+    - apertura chiese
+    - Dove trovo la mappa delle piste ciclabili?
+    - posso uscire in bici
+    - posso portare il mio animale domestico dal veterinario?
+    - posso uscire per andare a comprare le sigarette?
+    - vorrei conoscere gli orari di apertura dei negozi
+    - Orari mercato comunale
+    - Qual è il giorno di mercato?
+    - quali sono gli orari di apertura del mercato?
+    - mio figlio puÃ² andare a giocare a calcio?
+    - posso andare a ciaspolare questo weekend?
+    - posso andare a sciare?
+    - Posso fare scialpinismo?
+    - Posso giocare a basket?
+    - posso remare sul fiume?
+    - quando posso portare un mobile per lo smaltimento
+    - ambiente
+    - occorre prenotare per l'ecocentro ?
+    - posso praticare sport all'aperto oltre 6 km da casa?
+    - prenotare ecocentro
+    - quando posso recarmi presso l'ecocentro?
+    - A chi mi devo rivolgere per avere un cassonetto per lo sfalcio del verde?
+    - Posso portare un elettrodomestico direttamente all'ecocentro?
+    - quando passano per i rifiuti umidi
+    - quando viene effettuata la raccolta della carta?
+    - Quando viene effettuato il ritiro dei rifiuti organici?
+    - umido quando viene raccolto
+    - Come posso richiedere buoni spesa?
+    - come posso trovare informazioni sui buoni spesa
+    - contributo comunale
+    - contributo covid
+    - QUALI CONTRIBUTI PER PERSONE DISAGIATE ?
+    - quanto costa un ticket pasto del comune?
+    - Sono previsti buoni spesa per famiglie in difficoltà ?
+    - vorrei avere informazioni sulla tinteggiatura della facciata
+    - aggiornamenti per Cultura e Servizi?
+    - assistenza a domicilio
+    - assistenza domicilio disabilità 
+    - come posso contattare assistente sociale ?
+    - come posso richiedere i permessi per parcheggio disabili?
+    - come richiedere valutazione geriatrica per un parente?
+    - come si rinnova il contrassegno disabili
+    - contrassegno parcheggio per disabili
+    - quali sono gli orari dei servizi socioassistenziali?
+    - quali sono i servizi di assistenza per persone in difficoltà ?
+    - richiesta contrassegno parcheggio disabili
+    - sono previsti servizi di assistenza per anziani e persone in difficoltà ?
+    - vivo da solo e non posso uscire. chi puÃ² aiutarmi?
+    - orario biblioteca geisser
+    - qual è il numero di telefono della biblioteca?
+    - vorrei recarmi in biblioteca, sono aperte oggi?
+    - chi mi fa la spesa se sono in isolamento?
+    - la ZTL è ad accesso libero?
+    - traffico limitato
+    - zona traffico limitata
+    - parcheggi a pagamento
+    - Orario di chiusura al traffico veicolare
+    - vorrei informazioni sui lavori pubblici nella mia zona
+    - ANTITETANICA
+    - luogo e orario vaccinazione antitetanica
+    - dove posso fare il sierologico?
+    - anagrafe canina
+    - assistenza sanitaria anziani
+    - devo effettuare un esame specifico per la mia patologia, posso andare in ospedale?
+    - devo fare una mammografia, quando sarà  possibile prenotare?
+    - Ospedali
+    - ospedali pronto soccorso
+    - asilo nido comunale
+    - iscrizioni materne
+    - materna di zona
+    - micronidi
+    - quando aprono le iscrizioni al nido
+    - scuola materna
+    - scuole di infanzia
+    - scuole d'infanzia
+    - come devo fare per usufruire del trasporto pubblico per la scuola dell'infanzia?
+    - come iscriversi al trasporto pubblico all'asilo comunale
+    - Modalità ACCESSO ALLO SCUOLABUS
+    - scuola bus
+    - segnalazioni disturbi
+    - segnalazioni pulizia strade
+    - a che ora apre la piscina comunale?
+    - piste pattinaggio
+    - posso andare in palestra
+    - posso andare in palestra?
+    - quali attività  sportive mette a disposizione il Comune?
+    - quali sport per il comune?
+    - sono aperte le palestre
+    - sono aperte le palestre?
+    - sono aperti i campi da calcio
+    - sono aperti i campi da tennis?
+    - a che ora chiude il municipio?
+    - A chi si comunica la DIA per lavori di ristrutturazione?
+    - come pagare le multe?
+    - Come posso cambiare indirizzo?
+    - come posso cambiare residenza?
+    - come posso contestare una multa ricevuta?
+    - Come posso fare se voglio sposarmi?
+    - Come posso richiedere un certificato di nascita?
+    - Modalità ACCESSO ANAGRAFE
+    - orari anagrafe via reiss romolis
+    - orario ricevimento servizi sociali
+    - Orario sportello TARI?
+    - Orario TARI?
+    - orari ricevimento servizi socio-assistenziali
+    - orari Tributi?
+    - posso presentare la pratica online?
+    - qual è il numero di telefono dell ufficio tecnico dove risiedo
+    - quali sono gli orari dello sportello dei Tributi?
+    - quali sono i servizi online dell'ufficio comunale?
+    - quando apre domani l'anagrafe del comune?
+    - Sportelli aperti
+    - A che ora chiude il cimitero parco domenica?
+    - ORARI ACCESSO AL CIMITERO
+    - quando posso recarmi al cimitero?
+    - costi tassa rifiuti
+    - a causa della pandemia verrà  differita la data di pagamento seconda rata IMU
+    - costi
+    - quando scade la mia tari
+    - Scadenza tari comune di Pinerolo
+    - IMU
+    - imu seconda casa
+    - quando devo pagare l'imu?
+    - Quando scade l'IMU?
+    - scadenza imu?
+    - Come posso ottenere la carta d'identità  elettronica ?
+    - Come posso ottenere la CIE?
+    - dove posso rifare la carta di identità ?
+    - cambio di residenza altro comune
+    - quanto costa un certificato di residenza?
+    - vorrei cambiare residenza
+    - vorrei fare il cambio della residenza

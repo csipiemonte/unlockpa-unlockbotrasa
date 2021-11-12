@@ -1,0 +1,7 @@
+.vscode/launch.json
+**.pyc
+actions/__pycache__/
+
+.env
+.env.production
+

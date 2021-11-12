@@ -1,0 +1,86 @@
+version: "2.0"
+
+nlu:
+# - intent: help
+#   examples: |
+#     - help
+#     - aiuto
+#     - a che domande rispondi ?
+#     - che funzionalità hai ?
+#     - che funzioni hai ?
+#     - cosa puoi cercare ?
+#     - che domande posso farti ?
+#     - cosa sai ?
+    
+
+
+
+- intent: greet
+  examples: |
+    - ciao
+    - buongiorno
+    - buonasera
+    - Ehilà
+    - Hey 
+    - Buongiorno
+    - Buonasera
+    - buon pomeriggio
+    - Ciao
+    - Buon giorno
+    - Buondì
+    - Salve
+    - Eccomi
+    - Ehi
+    - Ehi là
+
+
+# - intent: goodbye
+#   examples: |
+#     - arrivederci
+#     - addio
+#     - a presto
+#     - a domani
+#     - Arrivederci
+#     - Alla prossima
+#     - Buona giornata
+#     - Buona serata
+#     - Ci sentiamo presto
+#     - A risentirci
+
+# - intent: thanks
+#   examples: |
+#     - Grazie
+#     - Grazie mille
+#     - Grazie per tutto
+#     - Ottimo
+#     - Ottimo, grazie!
+#     - Ok grazie
+#     - Oh grazie
+#     - Ti ringrazio
+#     - Ti ringrazio molto
+#     - Ti ringrazio tanto
+#     - Ti ringrazio per tutto
+#     - La ringrazio
+#     - La ringrazio molto
+#     - La ringrazio tanto
+#     - La ringrazio per tutto
+#     - Oh grazie
+#     - Perfetto grazie
+
+# - intent: chitchat/ask_name
+#   examples: |
+#     - Come ti chiami ?
+#     - Posso sapere il tuo nome ?
+#     - Come ti chiamano le persone ?
+#     - Hai un nome ?
+#     - Qual è il tuo nome ?
+
+# - intent: chitchat/bot
+#   examples: |
+#     - Sei un bot ?
+#     - Sei un umano ?
+#     - Sto parlando con un robot ?
+#     - Chi è lei ?
+#     - Con chi sto parlando ?
+
+

@@ -1,0 +1,24 @@
+version: "2.0"
+
+nlu:
+
+- intent: vide
+  examples: | 
+    - vorrei un appuntamento con il comune 
+    - vorrei prendere un appuntamento con l'ufficio tecnico
+    - vorrei parlare con il comune
+    - come prenoto un appuntamento ?
+    - dammi un appuntamento con l'ufficio cultura 
+    - per favore vorrei un colloquio con l'ufficio anagrafe
+    - quando posso parlare con il sindaco ?
+    - che giorni posso prendere appuntamento con l'ufficio cultura ?
+    - mi dai un appuntamento con l'ufficio tributi ?
+    - appuntamento ufficio edilizia
+    - ho urgenza di parlare con ufficio ambiente
+    - vorrei una convocazione ufficiale con la segreterie del comune
+    - devo prendere un appuntamento con il comune
+    - in quali orari posso avere un colloquio con l'ufficio ambiente ?
+    - a che ora posso prendere un appuntamento con l'ufficio tecnico ?
+    - voglio un appuntamento con il comune domani mattina
+    - la prossima settimana è possibile avere un colloqui con l'ufficio affari generali ?
+    - questo venerdì devo parlare con l'ufficio edilizia urbanistica

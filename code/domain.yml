@@ -1,0 +1,106 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- vide
+- nlu_fallback
+- get_started
+- greet
+- goodbye
+- thanks
+- help
+- cie
+- tari
+- cambio_residenza
+- covid
+- feedback_yes_no
+- feedback
+- categoria_sport
+- categoria_ambiente
+- categoria_cultura_e_servizi
+- categoria_salute
+- categoria_mobilità
+- categoria_scuola
+- categoria_uffici_comunali
+- categoria_tributi
+- categoria_covid
+- categoria
+entities:
+- feeback
+- category
+slots:
+  question:
+    type: any
+    influence_conversation: false
+  answer:
+    type: any
+    influence_conversation: false
+  question_id:
+    type: any
+    influence_conversation: false
+responses:
+  utter_please_rephrase:
+  - text: Mi dispiace non ho capito, puoi riformulare la domanda?
+  utter_welcome_message:
+  - text: "Ciao, sono __l'assistente digitale__ del tuo comune! Farò del mio meglio per aiutarti a trovare le informazioni che cerchi!"
+  utter_categories:  
+  - text: "Seleziona un tema di tuo interesse oppure scrivimi una domanda (ti ricordiamo di NON inserire dati personali)"
+    # buttons:
+    # - title: "🏀Sport"
+    #   payload: '/categoria{"category":102}'
+    # - title: "🌲Ambiente"
+    #   payload: '/categoria{"category":98}'
+    # - title: "🎻Cultura e servizi"
+    #   payload: '/categoria{"category":103}'
+    # - title: "🩺Salute"
+    #   payload: '/categoria{"category":100}'
+    # - title: "🚌Mobilità"
+    #   payload: '/categoria{"category":94}'
+    # - title: "✏️Scuola"
+    #   payload: '/categoria{"category":97}'
+    # - title: "🏢Uffici comunali"
+    #   payload: '/categoria{"category":99}'
+    # - title: "📋Tributi"
+    #   payload: '/categoria{"category":104}'
+    # - title: "😷Covid"
+    #   payload: '/categoria{"category":1}'
+    # - title: "📅Appuntamento VIDE"
+    #   payload: '/vide'
+  utter_feedback_yes_no:
+  - text: ''
+    buttons:
+    - title: "👍"
+      payload: '/feedback_yes_no{"feeback":"yes"}'
+    - title: "👎"
+      payload: '/feedback_yes_no{"feeback":"no"}'
+  utter_thanks_for_feedback:
+  - text: "Sono un servizio in continuo aggiornamento ed i tuoi suggerimenti sono preziosi per aiutarmi a migliorare"
+  utter_help:
+  - text: "Rispondo a domande relative al tuo comune.\n\nProva a chiedermi quali \
+      \ sono gli orari dell'ufficio anagrafe"
+  utter_greet:
+  - text: Hey! Come posso aiutarti ?
+  - text: Sono a tua dispozione, dimmi tutto !
+  utter_goodbye:
+  - text: Arrivederci e graze
+  - text: A presto !
+  utter_pleasure:
+  - text: Prego
+  - text: Prego è stato un piacere
+  - text: Lieto di aiutarti
+  - text: Lieto di esser stato utile
+  utter_vide_yes:
+  - text: E' possibile prenotare un appuntamento tramite il seguente link [{vide_link}]({vide_link})
+  utter_vide_no:
+  - text: In nostro comune non ha ancora implementato un sistema di prenotazione automatico.\n\nChiamare
+      il numero di telefono
+  utter_categoria:
+  - text: "Scegli una delle seguenti domande oppure scrivimene una"  
+actions:
+- action_fallback
+- action_announcement
+- action_vide
+- action_feedback_yes_no
+- action_feedback
+- action_questions_of_category
+- action_categories

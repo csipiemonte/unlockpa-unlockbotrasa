@@ -1,0 +1,67 @@
+version: "2.0"
+
+rules:
+
+
+- rule: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_fallback
+
+- rule: get_started
+  steps:
+  - intent: get_started
+  - action: action_announcement
+  - action: utter_welcome_message
+  - action: action_categories
+
+- rule: vide
+  steps:
+  - intent: vide
+  - action: action_vide
+
+- rule: saluto 
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: feedback_yes_no
+  steps:
+  - intent: feedback_yes_no
+  - action: action_feedback
+
+- rule: feedback
+  steps:
+  - intent: feedback
+  - action: action_feedback
+
+- rule: categoria
+  steps:
+  - intent: categoria
+  - action: action_questions_of_category
+
+# - rule: congedo
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - rule: help
+#   steps:
+#   - intent: help
+#   - action: utter_help
+
+# - rule: thanks
+#   steps:
+#   - intent: thanks
+#   - action: utter_pleasure
+
+# - rule: respond to chitchat
+#   steps:
+#     - intent: chitchat
+#     - action: utter_chitchat
+
+# - rule: respond to faq
+#   steps:
+#     - intent: faq
+#     - action: utter_faq
+

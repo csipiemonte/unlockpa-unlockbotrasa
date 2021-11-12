@@ -1,0 +1,6 @@
+FROM rasa/rasa:2.0.2-full
+
+COPY ./code/ /app/
+COPY ./models/ /app/models/
+
+# the entry point
